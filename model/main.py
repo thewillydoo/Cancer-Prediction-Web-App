@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
-import pickle5 as pickle
+import pickle
 
 def create_model(data):
 
@@ -60,6 +60,14 @@ def main():
     data = get_clean_data()
     model, scaler = create_model(data)
 
+    with open('model/model.pkl', 'wb') as f:
+        pickle.dump(model, f)
+    
+    with open('model/scaler.pkl', 'wb') as f:
+        pickle.dump(scaler, f)
+
+        
 
 if __name__ == "__main__":
     main()
+    
