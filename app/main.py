@@ -63,7 +63,7 @@ def add_sidebar():
             value = float(data[key].mean())
         )
     
-    return input_dict()
+    return input_dict
 
 def main():
     st.set_page_config(
@@ -71,7 +71,6 @@ def main():
         page_icon="🧊",
         layout="wide",
         initial_sidebar_state="expanded",
-    
     )
     
     input_data = add_sidebar()
