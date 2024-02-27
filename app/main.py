@@ -15,7 +15,7 @@ def get_clean_data():
 
     return data
 
-def add_slider():
+def add_sidebar():
     st.sidebar.header("Cell Nuclei Measurements")
 
     data = get_clean_data()
@@ -53,13 +53,17 @@ def add_slider():
         ("Fractal Dimension (worst)", "fractal_dimension_worst"),
     ]
 
+    input_dict = {}
+
     for label, key in slider_labels:
-        st.sidebar.slider(
+        input_dict[key] = st.sidebar.slider(
             label,
             min_value = float(0),
             max_value = float(data[key].max()),
             value = float(data[key].mean())
         )
+    
+    return input_dict()
 
 def main():
     st.set_page_config(
@@ -70,7 +74,7 @@ def main():
     
     )
     
-    add_slider()
+    input_data = add_sidebar()
 
     with st.container():
         st.title("Breast Cancer Prediction App")
