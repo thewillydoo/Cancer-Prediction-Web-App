@@ -3,7 +3,14 @@ import pandas as pd
 import pickle
 
 def main():
-    print("Hello, World!")
+    st.set_page_config(
+        page_title="Breast Cancer Prediction App",
+        page_icon="🧊",
+        layout="centered",
+        initial_sidebar_state="expanded",
+    
+    )
+    st.write("Hello World")
 
 if __name__ == "__main__":
     main()
