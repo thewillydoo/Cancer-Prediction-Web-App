@@ -76,10 +76,18 @@ def get_scaled_values(input_dict):
     scaled_dict = {}
     
     for key, value in input_dict.items():
-        scaled_dict[key] = (value - X[key].mean()) / X[key].std()
+        max_val = X[key].max()
+        min_val = X[key].min()
+        scaled_value = (value - min_val) / (max_val - min_val)
+        scaled_dict[key] = scaled_value
+
+    return scaled_dict
 
 # Create a radar chart
 def get_radar_chart(input_data):
+    
+    input_data = get_scaled_values(input_data)
+
     categories = ['Radius',
                   'Texture',
                   'Perimeter', 
