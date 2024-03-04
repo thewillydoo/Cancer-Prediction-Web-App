@@ -176,7 +176,7 @@ def add_predictions(input_data):
 # Main function
 def main():
     st.set_page_config(
-        page_title="Breast Cancer Prediction App",
+        page_title="Breast Cancer Predictor",
         page_icon="🧊",
         layout="wide",
         initial_sidebar_state="expanded",
