@@ -173,6 +173,7 @@ def add_predictions(input_data):
     
     st.write("This app was made so it can assist medical professionals in making a diagnosis, but should not be used as a substitue for a professsional diagnosis.")
 
+
 # Main function
 def main():
     st.set_page_config(
@@ -201,5 +202,7 @@ def main():
     with col2:
         add_predictions(input_data)
 
+    st.write("<div class='copyrightfooter'>© 2024 William Luo. All rights reserved.</div>", unsafe_allow_html=True)
+     
 if __name__ == "__main__":
     main()
